@@ -1,0 +1,7 @@
+# Dockerfile_landing_page
+
+Ambil file dari github: git clone https://github.com/imanwibisono/Dockerfile_landing_page.git
+
+Build Docker Image: $ docker build -t landing_page .
+
+Jalankan Docker: $ docker run -d -p host_port:80 landing_page
