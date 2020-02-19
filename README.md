@@ -3,7 +3,7 @@
 
 Ambil file dari github: 
 ```
-git clone https://github.com/imanwibisono/Dockerfile_landing_page.git
+git clone https://github.com/imanwibisono/landing_page.git
 ```
 Build Docker Image: 
 ```
