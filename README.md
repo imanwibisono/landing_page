@@ -13,4 +13,3 @@ Jalankan Docker:
 ```
 docker run -d -p host_port:80 landing_page
 ```
-.
