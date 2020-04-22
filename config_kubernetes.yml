@@ -48,10 +48,10 @@ metadata:
 spec:
   rules:
 ## Service Location n Characters
-  - host: jenkins-pesbuk.wibi.tech
+  - host: pesbuk.wibi.tech
     http:
       paths:
       - path: /
         backend:
-          serviceName: p-jenkins-landingpage-service
+          serviceName: p-landingpage-service
           servicePort: 80
