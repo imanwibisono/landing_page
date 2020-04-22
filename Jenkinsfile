@@ -21,7 +21,6 @@ node('master') {
             customImage.push("latest")
         }
     }
-}
       stage('DeployTo Kubernetes Cluster') {
         kubernetesDeploy(
           kubeconfigId: 'kube_config',
