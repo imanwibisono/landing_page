@@ -5,7 +5,7 @@ node('master') {
       echo 'Hello World'
     }
     stage('Git Pull from Github') {
-      git credentialsId: 'github_imanwibisono', url: 'git@github.com:imanwibisono/landing_page.git'
+      git credentialsId: 'github_imanwibisono', url: 'https://github.com/imanwibisono/landing_page.git'
     }
       stage('Build Docker Image') {
         sh "docker build --build-arg APP_NAME=jenkins-landing_page -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER} ."   
