@@ -35,7 +35,7 @@ spec:
         - containerPort: 80
        
 ---
-apiVersion: extensions/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: p-ingress
