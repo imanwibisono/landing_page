@@ -16,7 +16,7 @@ node('master') {
       stage('DeployTo Kubernetes Cluster') {
         kubernetesDeploy(
           kubeconfigId: 'kube_config',
-          configs: 'config_kubernetes.yml',
+          configs: 's-config_kubernetes.yml',
           enableConfigSubstitution: true
         )
     }
