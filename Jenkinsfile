@@ -10,16 +10,10 @@ node('master') {
       stage('Build Docker Image') {
         sh "docker build --build-arg APP_NAME=jenkins-landing_page -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER} ."   
     }
-    //   stage('Push Docker Image to Dockerhub') {
-    //       sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
-    // }
-    stage('Push image') {
-        /* Push image using withRegistry. */
-        docker.withRegistry('https://docker.io', 'docker_imanwibisono') {
-            app.push("${BUILD_NUMBER}")
-            app.push("latest")
-        }
-    }	
+      stage('Push Docker Image to Dockerhub') {
+         sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
+    }
+
       stage('DeployTo Kubernetes Cluster') {
         kubernetesDeploy(
           kubeconfigId: 'kube_config',
