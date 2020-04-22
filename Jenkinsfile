@@ -16,7 +16,7 @@ node('master') {
       stage('DeployTo Kubernetes Cluster') {
         kubernetesDeploy(
           kubeconfigId: 'kube_config',
-          configs: 'kube-config-pesbuk.yml',
+          configs: 'config_kubernetes.yml',
           enableConfigSubstitution: true
         )
     }
