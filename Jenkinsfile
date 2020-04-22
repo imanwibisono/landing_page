@@ -19,6 +19,7 @@ node('master') {
             app.push("${BUILD_NUMBER}")
             app.push("latest")
         }
+    }	
       stage('DeployTo Kubernetes Cluster') {
         kubernetesDeploy(
           kubeconfigId: 'kube_config',
