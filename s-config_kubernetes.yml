@@ -33,25 +33,3 @@ spec:
         image: $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
         - containerPort: 80
-       
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: s-ingress
-  namespace: staging
-  annotations:
-    ## Untuk menaikan batas upload file
-    nginx.org/client-max-body-size: "10m"
-    ## Memaksa jalan di https
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-spec:
-  rules:
-## Service Location n Characters
-  - host: s-pesbuk.wibi.tech
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: s-landingpage-service
-          servicePort: 80
